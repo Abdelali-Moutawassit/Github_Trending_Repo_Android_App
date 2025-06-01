@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GitHub Trending Repo</string>
+    <string name="repo_name">Repo Name</string>
+    <string name="repo_description">Repo description goes here</string>
+    <string name="owner_name">Owner Name</string>
+    <string name="repo_stars">★ 1234</string>
 </resources>
