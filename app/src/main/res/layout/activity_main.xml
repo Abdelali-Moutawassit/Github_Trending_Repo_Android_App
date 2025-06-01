@@ -7,6 +7,7 @@
 
     <!-- RecyclerView pour afficher la liste des repos -->
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="40dp"
         android:id="@+id/recyclerViewRepos"
         android:layout_width="0dp"
         android:layout_height="0dp"

@@ -1,5 +1,6 @@
 package com.example.githubtrendingrepo.presenter;
 
+import com.example.githubtrendingrepo.MainActivity;
 import com.example.githubtrendingrepo.model.GitHubRepo;
 import com.example.githubtrendingrepo.model.GitHubResponse;
 import com.example.githubtrendingrepo.network.ApiClient;
@@ -14,6 +15,10 @@ import retrofit2.Response;
 public class RepoListPresenter implements RepoListContract.Presenter {
 
     private RepoListContract.View view;
+
+    public RepoListPresenter(RepoListContract.View view) {
+        attachView(view);
+    }
 
     @Override
     public void attachView(RepoListContract.View view) {
@@ -42,6 +47,7 @@ public class RepoListPresenter implements RepoListContract.Presenter {
                     view.hideLoading();
                     if (response.isSuccessful() && response.body() != null) {
                         List<GitHubRepo> items = response.body().getItems();
+                        android.util.Log.d("RepoListPresenter", "Repos fetched: " + items.size());
                         view.showRepositories(items);
                     } else {
                         view.showError("Erreur lors du chargement des données.");
